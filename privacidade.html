@@ -11,7 +11,7 @@
 <main>
   <p><a href="index.html">← CortesLive</a></p>
   <h1>Política de Privacidade</h1>
-  <p class="muted">Última atualização: 14 de novembro de 2026</p>
+  <p class="muted">Última atualização: 14 de novembro de 2026 (permissão do YouTube detalhada)</p>
 
   <p>O CortesLive é uma ferramenta de uso pessoal que roda no computador do dono do canal
     <a href="https://www.twitch.tv/henrique2888">twitch.tv/henrique2888</a>. Ela gera cortes das lives dele e os
@@ -25,8 +25,11 @@
   <h2>2. Dados acessados</h2>
   <ul>
     <li><strong>Conta Google / YouTube:</strong> ao conectar um canal, o aplicativo recebe do Google um token de
-      acesso com a permissão de enviar vídeos (<code>youtube.upload</code>). Com ela, envia os cortes aprovados,
-      com título, descrição, hashtags e data de publicação. O aplicativo não lê e-mails, contatos, arquivos nem
+      acesso com a permissão de gerenciar vídeos do YouTube (<code>youtube.force-ssl</code>). Ele usa essa
+      permissão apenas para: ler o nome e o identificador do canal conectado; enviar os cortes aprovados, com
+      título, descrição, hashtags e data de publicação; consultar se um vídeo enviado por ele já foi publicado; e
+      mudar o horário ou excluir um vídeo que ele mesmo enviou, quando o dono cancela ou reagenda a publicação.
+      O aplicativo não mexe em outros vídeos, comentários ou avaliações, e não lê e-mails, contatos, arquivos nem
       outros dados da conta Google.</li>
     <li><strong>Conta TikTok:</strong> ao conectar a conta, o aplicativo recebe do TikTok um token de acesso com a
       permissão de enviar vídeos como rascunho (<code>video.upload</code>) e as informações básicas do perfil
@@ -63,7 +66,9 @@
   <hr>
   <h2>Privacy Policy (English summary)</h2>
   <p>CortesLive is a personal-use tool that runs on the channel owner's own computer. It uploads video clips the
-    owner has approved to the owner's own YouTube channels (scope <code>youtube.upload</code>) and sends them as
+    owner has approved to the owner's own YouTube channels (scope <code>youtube.force-ssl</code>, used only to
+    read the connected channel's name, upload approved clips, check whether they were published, and reschedule or
+    delete videos the app itself uploaded) and sends them as
     drafts to the owner's own TikTok account (scope <code>video.upload</code>). Access tokens, videos and review
     data are stored only on that computer. No data is sold or shared with third parties. CortesLive uses YouTube
     API Services; by using it with YouTube, the user agrees to the
