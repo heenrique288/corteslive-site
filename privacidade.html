@@ -38,11 +38,10 @@
     <li><strong>Conta TikTok:</strong> ao conectar a conta, o aplicativo recebe do TikTok um token de acesso com a
       permissão de enviar vídeos como rascunho (<code>video.upload</code>) e as informações básicas do perfil
       (nome de exibição e imagem), usadas só para mostrar qual conta está conectada.</li>
-    <li><strong>Conta Instagram:</strong> ao conectar uma conta profissional, o aplicativo recebe da Meta um token
-      com as permissões <code>instagram_business_basic</code> (nome de usuário e identificador, para mostrar qual
-      conta está conectada) e <code>instagram_business_content_publish</code> (publicar como Reel os cortes que o
-      dono escolher, com a legenda dele). Para a Meta baixar o vídeo, o aplicativo abre por alguns minutos um link
-      temporário e aleatório que entrega só aquele arquivo.</li>
+    <li><strong>Conta Instagram:</strong> ao conectar uma conta profissional pelo login da Meta, o aplicativo
+      recebe um token com as permissões <code>instagram_basic</code> (nome de usuário e identificador, para mostrar
+      qual conta está conectada) e <code>instagram_content_publish</code> (publicar como Reel os cortes que o dono
+      escolher, com a legenda dele). O vídeo é enviado direto do computador do dono para a Meta.</li>
     <li><strong>Twitch:</strong> dados públicos do canal (lista de vídeos das lives, títulos e miniaturas).</li>
   </ul>
 
@@ -82,7 +81,7 @@
     drafts to the owner's own TikTok account (scope <code>video.upload</code>). If the owner connects Google
     Calendar (scope <code>calendar.events</code>), it only creates, updates and deletes reminders for the TikTok
     posts the owner scheduled, and never reads or changes other events. If the owner connects a professional
-    Instagram account (<code>instagram_business_basic</code>, <code>instagram_business_content_publish</code>), it
+    Instagram account (<code>instagram_basic</code>, <code>instagram_content_publish</code>), it
     publishes as Reels only the clips the owner picks. Access tokens, videos and review
     data are stored only on that computer. No data is sold or shared with third parties. CortesLive uses YouTube
     API Services; by using it with YouTube, the user agrees to the
