@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Conectando o Instagram · CortesLive</title>
+<link rel="icon" href="../icone-1024.png">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<main>
+  <h1>Conectando o Instagram…</h1>
+  <p id="info">Voltando para o CortesLive no seu computador.</p>
+  <p><a id="link" href="#">Se nada acontecer em alguns segundos, clique aqui.</a></p>
+  <p class="muted">Esta página só repassa a autorização do Instagram para o CortesLive que roda no seu próprio PC
+    (<code>localhost</code>). Nada é guardado aqui.</p>
+</main>
+<script>
+  // O Instagram só aceita endereço de retorno HTTPS; o CortesLive roda em http://localhost.
+  // Esta página repassa code/state/error para o PC, sem guardar nada.
+  (function () {
+    var porta = "8765";
+    var entrada = new URLSearchParams(window.location.search);
+    var saida = new URLSearchParams();
+    ["code", "state", "error", "error_reason", "error_description"].forEach(function (k) {
+      var v = entrada.get(k);
+      if (v !== null) saida.set(k, k === "code" ? v.replace(/#_$/, "") : v);
+    });
+    var destino = "http://localhost:" + porta + "/auth/instagram/callback?" + saida.toString();
+    document.getElementById("link").href = destino;
+    if (!entrada.get("code") && !entrada.get("error")) {
+      document.getElementById("info").textContent = "Nenhuma autorização recebida. Comece pelo botão “Conectar Instagram” no CortesLive.";
+      return;
+    }
+    window.location.replace(destino);
+  })();
+</script>
+</body>
+</html>

@@ -11,12 +11,12 @@
 <main>
   <p><a href="index.html">← CortesLive</a></p>
   <h1>Política de Privacidade</h1>
-  <p class="muted">Última atualização: 14 de novembro de 2026 (permissão do YouTube detalhada)</p>
+  <p class="muted">Última atualização: 16 de novembro de 2026 (lembretes na Agenda do Google e Instagram)</p>
 
   <p>O CortesLive é uma ferramenta de uso pessoal que roda no computador do dono do canal
     <a href="https://www.twitch.tv/henrique2888">twitch.tv/henrique2888</a>. Ela gera cortes das lives dele e os
-    envia para as contas dele no YouTube e no TikTok. Esta política explica quais dados o aplicativo acessa e o
-    que faz com eles.</p>
+    envia para as contas dele no YouTube, no TikTok e no Instagram. Esta política explica quais dados o
+    aplicativo acessa e o que faz com eles.</p>
 
   <h2>1. Quem pode usar</h2>
   <p>Somente o dono do canal e as contas que ele mesmo conectar. O aplicativo não tem cadastro de usuários e não
@@ -31,16 +31,25 @@
       mudar o horário ou excluir um vídeo que ele mesmo enviou, quando o dono cancela ou reagenda a publicação.
       O aplicativo não mexe em outros vídeos, comentários ou avaliações, e não lê e-mails, contatos, arquivos nem
       outros dados da conta Google.</li>
+    <li><strong>Agenda do Google:</strong> se o dono conectar a agenda, o aplicativo recebe a permissão de
+      gerenciar eventos (<code>calendar.events</code>). Ele a usa apenas para criar, mudar e apagar, na agenda
+      principal do dono, os lembretes das postagens do TikTok que ele agendou (horário e legenda do corte), e para
+      ler o nome da agenda conectada. O aplicativo não lê nem altera os outros eventos da agenda.</li>
     <li><strong>Conta TikTok:</strong> ao conectar a conta, o aplicativo recebe do TikTok um token de acesso com a
       permissão de enviar vídeos como rascunho (<code>video.upload</code>) e as informações básicas do perfil
       (nome de exibição e imagem), usadas só para mostrar qual conta está conectada.</li>
+    <li><strong>Conta Instagram:</strong> ao conectar uma conta profissional, o aplicativo recebe da Meta um token
+      com as permissões <code>instagram_business_basic</code> (nome de usuário e identificador, para mostrar qual
+      conta está conectada) e <code>instagram_business_content_publish</code> (publicar como Reel os cortes que o
+      dono escolher, com a legenda dele). Para a Meta baixar o vídeo, o aplicativo abre por alguns minutos um link
+      temporário e aleatório que entrega só aquele arquivo.</li>
     <li><strong>Twitch:</strong> dados públicos do canal (lista de vídeos das lives, títulos e miniaturas).</li>
   </ul>
 
   <h2>3. Onde os dados ficam</h2>
   <p>Tokens de acesso, vídeos, transcrições e avaliações ficam guardados somente no computador do dono do canal.
-    O aplicativo não tem servidor próprio na internet e não envia esses dados a ninguém além do YouTube e do
-    TikTok, e somente para fazer os envios que o dono aprovou.</p>
+    O aplicativo não tem servidor próprio na internet e não envia esses dados a ninguém além do YouTube, do
+    TikTok, do Instagram e da Agenda do Google, e somente para fazer os envios e lembretes que o dono aprovou.</p>
 
   <h2>4. Compartilhamento</h2>
   <p>Nenhum dado é vendido, alugado ou compartilhado com terceiros. Não há publicidade nem rastreamento.</p>
@@ -56,6 +65,7 @@
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
     <li>TikTok: no aplicativo do TikTok, em Configurações e privacidade → Segurança e permissões → Gerenciar
       permissões de apps.</li>
+    <li>Instagram: no aplicativo do Instagram, em Configurações → Apps e sites.</li>
     <li>Dados locais: apagar a pasta de dados do CortesLive no computador remove tokens, vídeos e avaliações.</li>
   </ul>
 
@@ -69,7 +79,11 @@
     owner has approved to the owner's own YouTube channels (scope <code>youtube.force-ssl</code>, used only to
     read the connected channel's name, upload approved clips, check whether they were published, and reschedule or
     delete videos the app itself uploaded) and sends them as
-    drafts to the owner's own TikTok account (scope <code>video.upload</code>). Access tokens, videos and review
+    drafts to the owner's own TikTok account (scope <code>video.upload</code>). If the owner connects Google
+    Calendar (scope <code>calendar.events</code>), it only creates, updates and deletes reminders for the TikTok
+    posts the owner scheduled, and never reads or changes other events. If the owner connects a professional
+    Instagram account (<code>instagram_business_basic</code>, <code>instagram_business_content_publish</code>), it
+    publishes as Reels only the clips the owner picks. Access tokens, videos and review
     data are stored only on that computer. No data is sold or shared with third parties. CortesLive uses YouTube
     API Services; by using it with YouTube, the user agrees to the
     <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, and Google's handling of data is
